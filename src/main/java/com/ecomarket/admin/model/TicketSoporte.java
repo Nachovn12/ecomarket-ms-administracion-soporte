@@ -1,5 +1,9 @@
-package com.ecomarket.admin.entity;
+package com.ecomarket.admin.model;
 
+
+import lombok.Setter;
+import lombok.NoArgsConstructor;
+import lombok.Getter;
 import jakarta.persistence.*;
 import lombok.*;
 

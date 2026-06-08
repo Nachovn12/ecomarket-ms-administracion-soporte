@@ -1,5 +1,8 @@
-package com.ecomarket.admin.entity;
+package com.ecomarket.admin.model;
 
+import lombok.Setter;
+import lombok.NoArgsConstructor;
+import lombok.Getter;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -18,11 +21,21 @@ public class AsignacionPersonal {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idAsignacion;
 
+    /**
+     * ID del usuario interno (referencia externa al MS Usuarios e Identidad).
+     * Se mantiene como Long porque pertenece a otro microservicio.
+     */
     @Column(nullable = false)
     private Long idUsuarioInterno;
 
-    @Column(nullable = false)
-    private Long idTienda;
+    /**
+     * Relación ManyToOne con Tienda.
+     * Reemplaza el campo Long idTienda anterior para garantizar
+     * integridad referencial dentro de este microservicio.
+     */
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_tienda", nullable = false)
+    private Tienda tienda;
 
     @Column(nullable = false, length = 80)
     private String cargo;

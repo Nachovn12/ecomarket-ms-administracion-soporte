@@ -1,4 +1,4 @@
-package com.ecomarket.admin.entity;
+package com.ecomarket.admin.model;
 
 public enum EstadoTicket {
     ABIERTO,

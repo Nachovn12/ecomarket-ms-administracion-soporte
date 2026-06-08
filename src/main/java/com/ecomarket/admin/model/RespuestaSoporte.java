@@ -1,5 +1,8 @@
-package com.ecomarket.admin.entity;
+package com.ecomarket.admin.model;
 
+import lombok.Setter;
+import lombok.NoArgsConstructor;
+import lombok.Getter;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -18,8 +21,14 @@ public class RespuestaSoporte {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idRespuesta;
 
-    @Column(nullable = false)
-    private Long idTicket;
+    /**
+     * Relación ManyToOne con TicketSoporte.
+     * Reemplaza el campo Long idTicket anterior para garantizar
+     * integridad referencial entre respuestas y tickets.
+     */
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_ticket", nullable = false)
+    private TicketSoporte ticket;
 
     @Column(nullable = false, length = 1000)
     private String mensaje;
