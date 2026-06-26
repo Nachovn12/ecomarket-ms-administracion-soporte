@@ -4,13 +4,13 @@ Microservicio responsable de tiendas, asignacion de personal, tickets de soporte
 
 ## Responsable
 
-| Campo | Detalle |
-| --- | --- |
-| Responsable principal | Ignacio Valeria |
-| Rama de trabajo | `feature/ms-administracion-soporte` |
-| Base de datos | `bd_admin` |
-| Puerto local | `8088` |
-| URL base local | `http://localhost:8088` |
+| Campo                 | Detalle                             |
+| --------------------- | ----------------------------------- |
+| Responsable principal | Ignacio Valeria                     |
+| Rama de trabajo       | `feature/ms-administracion-soporte` |
+| Base de datos         | `bd_admin`                          |
+| Puerto local          | `8088`                              |
+| URL base local        | `http://localhost:8088`             |
 
 ## Que hace
 
@@ -29,7 +29,6 @@ Microservicio responsable de tiendas, asignacion de personal, tickets de soporte
 - Spring Boot
 - Spring Web
 - Spring Data JPA / Hibernate
-
 - MySQL
 - Maven
 - JUnit
@@ -70,51 +69,43 @@ COLLATE utf8mb4_unicode_ci;
 
 ## Como ejecutar
 
-Desde la raiz del repositorio:
+Desde la raiz de este repositorio:
 
 ```powershell
-cd .\ms-administracion-soporte\
 .\mvnw.cmd spring-boot:run
 ```
 
 ## Como probar
 
 ```powershell
-.\mvnw.cmd test
-```
-
-O entrando al directorio (recomendado):
-
-```powershell
-cd .\ms-administracion-soporte\
 .\mvnw.cmd clean test
 ```
 
 ## Endpoints principales
 
-| Metodo | Ruta | Uso |
-| --- | --- | --- |
-| POST | `/api/admin/tiendas` | Crear tienda |
-| GET | `/api/admin/tiendas` | Listar tiendas |
-| GET | `/api/admin/tiendas/{idTienda}` | Consultar tienda |
-| PUT | `/api/admin/tiendas/{idTienda}` | Actualizar tienda |
-| POST | `/api/admin/tiendas/{idTienda}/personal` | Asignar personal |
-| GET | `/api/admin/tiendas/{idTienda}/personal` | Listar personal por tienda |
-| POST | `/api/soporte/tickets` | Crear ticket |
-| GET | `/api/soporte/tickets` | Listar tickets |
-| GET | `/api/soporte/tickets/{idTicket}` | Consultar ticket |
-| PATCH | `/api/soporte/tickets/{idTicket}/estado` | Actualizar estado de ticket |
-| POST | `/api/soporte/tickets/{idTicket}/respuestas` | Responder ticket |
-| GET | `/api/soporte/tickets/{idTicket}/respuestas` | Listar respuestas |
-| POST | `/api/admin/monitorizacion/metricas` | Registrar metrica |
-| GET | `/api/admin/monitorizacion/metricas` | Listar metricas |
-| POST | `/api/admin/monitorizacion/alertas` | Registrar alerta |
-| GET | `/api/admin/monitorizacion/alertas` | Listar alertas |
-| PATCH | `/api/admin/monitorizacion/alertas/{idAlerta}/resolver` | Resolver alerta |
-| POST | `/api/admin/respaldos` | Programar respaldo |
-| GET | `/api/admin/respaldos` | Listar respaldos |
-| PATCH | `/api/admin/respaldos/{idRespaldo}/ejecutar` | Ejecutar respaldo |
-| PATCH | `/api/admin/respaldos/{idRespaldo}/restaurar` | Restaurar respaldo |
+| Metodo | Ruta                                                    | Uso                         |
+| ------ | ------------------------------------------------------- | --------------------------- |
+| POST   | `/api/admin/tiendas`                                    | Crear tienda                |
+| GET    | `/api/admin/tiendas`                                    | Listar tiendas              |
+| GET    | `/api/admin/tiendas/{idTienda}`                         | Consultar tienda            |
+| PUT    | `/api/admin/tiendas/{idTienda}`                         | Actualizar tienda           |
+| POST   | `/api/admin/tiendas/{idTienda}/personal`                | Asignar personal            |
+| GET    | `/api/admin/tiendas/{idTienda}/personal`                | Listar personal por tienda  |
+| POST   | `/api/soporte/tickets`                                  | Crear ticket                |
+| GET    | `/api/soporte/tickets`                                  | Listar tickets              |
+| GET    | `/api/soporte/tickets/{idTicket}`                       | Consultar ticket            |
+| PATCH  | `/api/soporte/tickets/{idTicket}/estado`                | Actualizar estado de ticket |
+| POST   | `/api/soporte/tickets/{idTicket}/respuestas`            | Responder ticket            |
+| GET    | `/api/soporte/tickets/{idTicket}/respuestas`            | Listar respuestas           |
+| POST   | `/api/admin/monitorizacion/metricas`                    | Registrar metrica           |
+| GET    | `/api/admin/monitorizacion/metricas`                    | Listar metricas             |
+| POST   | `/api/admin/monitorizacion/alertas`                     | Registrar alerta            |
+| GET    | `/api/admin/monitorizacion/alertas`                     | Listar alertas              |
+| PATCH  | `/api/admin/monitorizacion/alertas/{idAlerta}/resolver` | Resolver alerta             |
+| POST   | `/api/admin/respaldos`                                  | Programar respaldo          |
+| GET    | `/api/admin/respaldos`                                  | Listar respaldos            |
+| PATCH  | `/api/admin/respaldos/{idRespaldo}/ejecutar`            | Ejecutar respaldo           |
+| PATCH  | `/api/admin/respaldos/{idRespaldo}/restaurar`           | Restaurar respaldo          |
 
 ## Ejemplo de uso
 
@@ -134,16 +125,16 @@ GET http://localhost:8088/api/soporte/tickets
 
 ### Casos de uso
 
-![Casos de uso MS Administracion y Soporte](../docs/diagramas/casos-uso/diagrama-casos-uso-ms-administracion-soporte.png)
+![Casos de uso MS Administracion y Soporte](https://raw.githubusercontent.com/Nachovn12/ecomarket-spa-docs/main/docs/diagramas/casos-uso/diagrama-casos-uso-ms-administracion-soporte.png)
 
 ### Diagrama de clases
 
-![Diagrama de clases MS Administracion y Soporte](../docs/diagramas/clases/diagrama-clases-ms-administracion-soporte.png)
+![Diagrama de clases MS Administracion y Soporte](https://raw.githubusercontent.com/Nachovn12/ecomarket-spa-docs/main/docs/diagramas/clases/diagrama-clases-ms-administracion-soporte.png)
 
 ## Documentacion relacionada
 
-- `../docs/postman/evidencia-s4-ignacio-admin-soporte.md`
-- `../docs/evidencias-tecnicas/01_jira_sprints_epicas_hu.md`
-- `../docs/evidencias-tecnicas/06_microservicios_arquitectura.md`
-- `../docs/evidencias/evidencia-build-tests.md`
-- `../docs/arquitectura/bases-datos-mysql.md`
+- [Evidencia Postman](https://github.com/Nachovn12/ecomarket-spa-docs/blob/main/docs/postman/evidencia-postman.md)
+- [Evidencia build y tests](https://github.com/Nachovn12/ecomarket-spa-docs/blob/main/docs/evidencias/evidencia-build-tests.md)
+- [Evidencias tecnicas](https://github.com/Nachovn12/ecomarket-spa-docs/tree/main/docs/evidencias-tecnicas)
+- [Bases de datos MySQL](https://github.com/Nachovn12/ecomarket-spa-docs/blob/main/docs/arquitectura/bases-datos-mysql.md)
+- [Repositorio de documentacion](https://github.com/Nachovn12/ecomarket-spa-docs)

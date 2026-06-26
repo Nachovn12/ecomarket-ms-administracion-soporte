@@ -93,7 +93,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <excludes>`n                        <exclude>**/service/*ClientService.class</exclude>
+                    <excludes>
                         <exclude>
                             <groupId>org.projectlombok</groupId>
                             <artifactId>lombok</artifactId>
@@ -154,7 +154,8 @@
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>0.8.13</version>
                 <configuration>
-                    <excludes>`n                        <exclude>**/service/*ClientService.class</exclude>
+                    <excludes>
+                        <exclude>**/service/*ClientService.class</exclude>
                         <exclude>**/*Application.class</exclude>
                         <exclude>**/dto/**</exclude>
                         <exclude>**/model/**</exclude>
